@@ -1,0 +1,57 @@
+controllers:
+    resource: ../src/Controller/
+    type: annotation
+
+kernel:
+    resource: ../src/Kernel.php
+    type: annotation
+
+
+author_list:
+    path: /authors
+    controller: App\Controller\AuthorController::listAuthors
+    methods: ['GET']
+
+author_view:
+    path: /authors/{id}
+    controller: App\Controller\AuthorController::viewAuthor
+
+author_delete:
+    path: /authors/{id}/delete
+    controller: App\Controller\AuthorController::deleteAuthor
+
+author_new:
+    path: /authors/new
+    controller: App\Controller\AuthorController::addAuthor
+
+
+# config/routes.yaml
+logout:
+    path: /logout
+    controller: App\Controller\LoginController::logout
+
+
+
+# routes.yaml
+
+app_login:
+    path: /login
+    controller: App\Controller\LoginController::login
+    methods: ['GET', 'POST']
+
+protected_page:
+    path: /protected-page
+    controller: App\Controller\LoginController::protectedPage
+
+
+books_list:
+    path: /books
+    controller: App\Controller\BooksController::listBooks
+
+books_view:
+    path: /books/{id}
+    controller: App\Controller\BooksController::viewBook
+
+books_add:
+    path: /books/add
+    controller: App\Controller\BooksController::addBook

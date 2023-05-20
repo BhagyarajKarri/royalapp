@@ -1,0 +1,24 @@
+
+
+
+
+
+
+
+
+{% block body %}
+    <h1>Author Name:{{ author.first_name }}</h1>
+    <h2>Books</h2>
+
+    {% if author.books is not empty %}
+        <ul>
+            {% for book in author.books %}
+                <li>{{ book.title }} <a href="{{ path('author_delete', {'id': author.id, 'bookId': book.id}) }}">Delete</a></li>
+            {% endfor %}
+        </ul>
+         <a href="{{ path('author_list') }}">Back to List</a>
+    {% else %}
+        <p>No books found.</p>
+         <a href="{{ path('author_list') }}">Back to List</a>
+    {% endif %}
+{% endblock %}
