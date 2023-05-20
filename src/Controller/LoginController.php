@@ -42,28 +42,13 @@ class LoginController extends AbstractController
             $session->set('last_name', $lastName);
                
                         // Redirect the user to a protected page or perform any other necessary actions
-            return $this->redirectToRoute('protected_page');
+            return $this->redirectToRoute('author_list');
         }
 
         return $this->render('login.html.twig');
     }
 
-    /**
-     * @Route("/protected-page", name="protected_page")
-     */
-    public function protectedPage(Request $request): Response
-    {
-        // Retrieve the access token from the storage method you used
-        // For example, using Symfony's session:
-         $session = $request->getSession();
-        $accessToken = $session->get('access_token');
-
-        // Make API requests using the access token as needed
-
-        return $this->render('protected_page.html.twig', [
-            'access_token' => $accessToken,
-        ]);
-    }
+    
 
     /**
  * @Route("/logout", name="logout")

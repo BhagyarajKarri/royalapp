@@ -39,18 +39,10 @@ app_login:
     controller: App\Controller\LoginController::login
     methods: ['GET', 'POST']
 
-protected_page:
-    path: /protected-page
-    controller: App\Controller\LoginController::protectedPage
 
 
-books_list:
-    path: /books
-    controller: App\Controller\BooksController::listBooks
 
-books_view:
-    path: /books/{id}
-    controller: App\Controller\BooksController::viewBook
+
 
 books_add:
     path: /books/add
