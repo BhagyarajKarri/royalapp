@@ -46,4 +46,5 @@ app_login:
 
 books_add:
     path: /books/add
-    controller: App\Controller\BooksController::addBook
+    controller: 'App\Controller\BookController::add'
+    methods: ['GET', 'POST']
